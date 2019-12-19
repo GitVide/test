@@ -4,11 +4,11 @@ let refresh = function () {
     xmlHttp.open('get', 'http://ext.gaomuxuexi.com:5870/task/random');
     xmlHttp.send(null);
     xmlHttp.onreadystatechange = function () {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            let data = xmlHttp.responseText;
+        if (this.readyState == 4 && this.status == 200) {
+            let data = this.responseText;
             //转化为JSON
             data = JSON.parse(data);
-            console.log(xmlHttp.response);
+            console.log(this.response);
             let dataCode = data['no'];
             if (dataCode == 200) {
                 console.log(dataCode);
